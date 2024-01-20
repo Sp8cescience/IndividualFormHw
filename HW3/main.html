@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice Form</title>
+        <link rel="stylesheet" type="text/css" href="design.css">
+    </head>
+    <body>
+        <form name = "mainForm" onsubmit = "return false">
+            <fieldset id="intro">
+                <button type="button" id="new">New User</button>
+                <button type="button" id="old">Existing User</button>
+            </fieldset>
+            <fieldset id="newacc">
+                <input type="text" id="username" name="username" default="Enter a Username">
+                <input type="password" id="pw" name="pw" default="Enter a Password">
+                <input type="text" id="city" name="city" default="Please enter your city of residence.">
+                <input type="text" id="state" name="state" default="Please enter the full name of your US state or territory of residence.">
+            </fieldset>
+            <fieldset id="login">
+                <input type="text" id="loguser" name="loguser" default="Username">
+                <input type="password" id="logpw" name="logpw" default="Password">
+                <button type="button" id="submit">Login</button>
+            </fieldset>
+            <legend>Login Here</legend>
+        </form>
+    </body>
+</html>
