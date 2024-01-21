@@ -16,39 +16,28 @@ const done = document.getElementById("submit");
 //Actual script functions start here
 second.disabled = true;
 third.disabled = true;
-let usernames = [];
-let passwords = [];
-let cities = [];
-let states = [];
-newb.addEventListener("onclick", function () {
+newb.addEventListener("click", function () {
     second.disabled = false;
     first.disabled = true;
-    finish.addEventListener("onclick", function () {
-        let currentkey = usernames.length.toString;
-        localStorage.setItem(currentkey, r1.innerHTML);
-        usernames.push(currentkey);
-        let currentkey2 = passwords.length.toString;
-        localStorage.setItem(currentkey2, r2.innerHTML);
-        passwords.push(currentkey2);
-        let currentkey3 = cities.length.toString;
-        localStorage.setItem(currentkey3, r3.innerHTML);
-        cities.push(currentkey3);
-        let currentkey4 = states.length.toString;
-        localStorage.setItem(currentkey4, r4.innerHTML);
-        states.push(currentkey4);
-        alert("Hello " + r1.innerHTML + "!");
+    finish.addEventListener("click", function () {
+        localStorage.setItem("u", r1.value);
+        localStorage.setItem("p", r2.value);
+        localStorage.setItem("c", r3.value);
+        localStorage.setItem("s", r4.value);
+        alert("Hello " + r1.value + "!");
     });
 });
-oldb.addEventListener("onclick", function () {
-    for (i = 0; i < usernames.length; i++) {
-        if (localStorage.getItem(usernames[i]) === checkun.innerHTML) {
-            for (l = 0; j < passwords.length; j++) {
-                if (localStorage.getItem(passwords[j]) === checkps.innerHTML) {
-                    alert("Welcome back " + checkun.innerHTML + "!");
-                    break;
-                }
-            }
-            break;
+oldb.addEventListener("click", function () {
+    third.disabled = false;
+    first.disabled = true;
+    done.addEventListener("click",  function () {
+        let savedu = localStorage.getItem("u");
+        let savedp = localStorage.getItem("p");
+        if ((savedu === checkun.value) && (savedp === checkps.value)) {
+            alert("Welcome back " + savedu + "!");
         }
-    }
+        else {
+            alert("invalid login credentials");
+        }
+    });
 });
